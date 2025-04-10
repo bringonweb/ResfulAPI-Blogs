@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const path = require("path");
-const { v4: uuidv4 } = require('uuid');
- const methodOverride = require('method-override');
+const { v4: uuidv4 } = require('uuid');           // this pacake is install throw npm and this pacage is used to automatically assined unique id 
+const methodOverride = require('method-override');    //download methodOverride package from npm this pacake is used to change the form route like as you know html form has only get and post in methods and when you wants to call patch ao put aoor delete route then it is not possible in normal and for this you need to install this methodoverride package
 
 
 app.use(express.urlencoded({extended: true}));
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method"));                  // call the methodOverridepackage
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
